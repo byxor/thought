@@ -14,11 +14,14 @@ Another issue, chronology, arises from this tree-like structure of thought. As y
 
 A further issue arises from the difficulty to distinguish between different types of thoughts. Sometimes I state a fact. Sometimes I pose a question to myself. Sometimes I answer a question. Sometimes I _explore_ or entertain an idea I don't necessarily agree with. In plain text, these all blend together, and there is benefit to be gained from segregating them.
 
+When thoughts deeply nest into a tree-like structure, it's hard to view your thinking at high levels of abstraction, selectively digging deeper until the core problems are resolved.
+
 ## Summary of Requirements
 
 1. Thoughts form a tree-like structure that needs to be visible.
 2. Differing types of thoughts (e.g. Questions, Answers, Statements of Fact, Feelings, Entertained Ideas) need to be distinguishable.
 3. The chronological order of thoughts should be preserved while keeping similar thoughts nearby (if possible).
+4. Thoughts should be viewable at different levels of abstraction.
 
 ## Potential Implementations of Requirements
 
@@ -37,3 +40,27 @@ Thought 1 {
     Thought B {}
 }
 ```
+
+### 2. Differing Thought Types
+
+Perhaps the differing types could be distinguished using prefixes.
+
+e.g.
+```
+Q: Do I believe in a God? {
+    ...
+    A: I am uncertain.
+}
+
+Fact: C++ is a Programming Language.
+```
+
+Syntax highlighting would be great for this.
+
+
+### 3. Chronology
+
+### 4. Viewable Levels of Abstraction
+
+
+## But What if Thoughts Form a Graph, not a Tree?
