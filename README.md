@@ -14,7 +14,7 @@ Another issue, chronology, arises from this tree-like structure of thought. As y
 
 A further issue arises from the difficulty to distinguish between different types of thoughts. Sometimes I state a fact. Sometimes I pose a question to myself. Sometimes I answer a question. Sometimes I _explore_ or entertain an idea I don't necessarily agree with. In plain text, these all blend together, and there is benefit to be gained from segregating them.
 
-### Summary of Requirements
+## Summary of Requirements
 
 1. Thoughts form a tree-like structure that needs to be visible.
 2. Differing types of thoughts (e.g. Questions, Answers, Statements of Fact, Entertained Ideas) need to be distinguishable.
