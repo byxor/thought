@@ -59,6 +59,8 @@ Syntax highlighting would be great for this.
 
 ### 3. Chronology
 
+This is solved by indentation.
+
 ### 4. Viewable Levels of Abstraction
 
 This has been solved in IDEs and Text Editors with collapsable blocks.
