@@ -1,11 +1,17 @@
 #include "question.hpp"
 #include <string>
 
-Question::Question(std::string question) {
-  throw UnansweredQuestion();
+Question::Question(const std::string question,
+                   const std::string answer): answer(answer) {}
+
+void
+Question::AssertCompliance() const {
+  if (this->answer.empty()) {
+    throw UnansweredQuestion();
+  }
 }
 
 const char *
 UnansweredQuestion::what() const throw() {
-  return "Question was not implemented.";
+  return "Question was not answered.";
 }

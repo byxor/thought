@@ -3,7 +3,10 @@
 
 class Question {
 public:
-  Question(std::string question);
+  Question(std::string question, std::string answer="");
+  void AssertCompliance() const;
+private:
+  const std::string answer;
 };
 
 struct UnansweredQuestion : public std::exception {
