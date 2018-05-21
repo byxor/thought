@@ -82,4 +82,7 @@ I'll leave this idea unimplemented until someone finds a need for it.
 
 ## Compiler?
 
-Could we check for errors at compile time?
+Could we check for errors or ensure that rules are satisfied at compile time?
+
+* Questions must have answers.
+* Questions with no thoughts should be condensed to facts or feelings.
