@@ -1,30 +1,19 @@
 #define CATCH_CONFIG_MAIN
-#include "question.hpp"
+#include "thought.hpp"
 #include "catch.hpp"
 
-const Question unanswered[] = {
-  Question("Is this real life?"),
-  Question("Are carrots orange?"),
-  Question("How far can one push their productivity?"),
+const Answer valid[] = {
+  Answer("Yes"),
+  Answer("No"),
+  Answer("250"),
 };
 
-const Question answered[] = {
-  Question("How many cars can you see?", "0"),
-  Question("How old are you?", "20"),
-  Question("Is bitcoin going to crash?", "Probably"),
-};
-
-TEST_CASE("Questions") {
-
-  SECTION("are invalid without answers") {
-    for (auto const &question: unanswered) {
-      REQUIRE_THROWS_AS(question.AssertCompliance(), UnansweredQuestion);
-    }
+TEST_CASE("Answers") {
+  SECTION("are invalid when empty") {
+    REQUIRE_THROWS_AS(Answer("").AssertCompliant(), NotAnAnswer);
   }
-
   SECTION("are valid otherwise") {
-    for (auto const &question: answered) {
-      question.AssertCompliance();
-    }
+    for (auto const &answer: valid)
+      answer.AssertCompliant();
   }
 }
