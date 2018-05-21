@@ -57,10 +57,19 @@ Fact: C++ is a Programming Language.
 
 Syntax highlighting would be great for this.
 
-
 ### 3. Chronology
 
 ### 4. Viewable Levels of Abstraction
 
+This has been solved in IDEs and Text Editors with collapsable blocks.
+
+* Click `+` to expand a block.
+* Click `-` to collapse a block.
 
 ## But What if Thoughts Form a Graph, not a Tree?
+
+Is it possible that more than one thought can depend on a single thought?
+
+I can't imagine a scenario where this holds true, but I don't doubt that it's possible.
+
+I'll leave this idea unimplemented until someone finds a need for it.
