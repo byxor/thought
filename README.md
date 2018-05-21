@@ -46,13 +46,17 @@ Thought 1 {
 Perhaps the differing types could be distinguished using prefixes.
 
 e.g.
-```
-Q: Do I believe in a God? {
-    ...
-    A: I am uncertain.
-}
+```c
+// Questions and Answers
+Do I believe in a God? {
+    ... // Thoughts
+} I am uncertain;
 
-Fact: C++ is a Programming Language.
+// Facts
+* C++ is a Programming Language;
+
+// Feelings
+~ Writing C++ is offensive;
 ```
 
 Syntax highlighting would be great for this.
