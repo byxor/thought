@@ -43,7 +43,7 @@ Thought 1 {
 
 ### 2. Differing Thought Types
 
-Perhaps the differing types could be distinguished using prefixes.
+Differing thought types could be distinguished with a pre-defined syntax.
 
 e.g.
 ```c
@@ -79,3 +79,7 @@ Is it possible that more than one thought can depend on a single thought?
 I can't imagine a scenario where this holds true, but I don't doubt that it's possible.
 
 I'll leave this idea unimplemented until someone finds a need for it.
+
+## Compiler?
+
+Could we check for errors at compile time?
