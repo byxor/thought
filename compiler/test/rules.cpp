@@ -3,11 +3,15 @@
 #include "catch.hpp"
 
 TEST_CASE("Questions") {
+
   SECTION("are invalid without answers") {
     try {
       Question q("Is this real life?");
       FAIL("Should raise UnansweredQuestion error");
     } catch (UnansweredQuestion _) {}
   }
-  // SECTION("are valid otherwise") {}
+
+  SECTION("are valid otherwise") {
+    Question q("Is this real life?", "Of course!");
+  }
 }
