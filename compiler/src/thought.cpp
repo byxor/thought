@@ -8,10 +8,9 @@ Fact::Fact(Content content) {}
 Answer::Answer(Content content) : content(content) {}
 
 
-void
-Answer::AssertCompliant() const {
-  if (this->content.empty())
-    throw NotAnAnswer();
+bool
+Answer::IsMeaningful() const {
+  return not this->content.empty()
 }
 
 

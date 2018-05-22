@@ -24,7 +24,7 @@ class Fact : public Thought {
 class Answer {
 public:
   Answer(Content content);
-  void AssertCompliant() const;
+  bool IsMeaningful() const;
 private:
   const std::string content;
 };

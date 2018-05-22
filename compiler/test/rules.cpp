@@ -6,12 +6,12 @@
 
 TEST_CASE("Answers") {
   SECTION("are meaningless when empty") {
-    REQUIRE_THROWS_AS(Answer("").AssertCompliant(), Meaningless);
+    REQUIRE( Answer("").IsMeaningful() == false );
   }
   SECTION("are valid otherwise") {
     Answer const answers[] = { Answer("Yes"), Answer("No"), Answer("250") };
     for (Answer const &notEmpty: answers)
-      notEmpty.AssertCompliant();
+      REQUIRE( notEmpty.IsMeaningful() );
   }
 }
 
