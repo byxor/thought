@@ -6,7 +6,7 @@
 
 TEST_CASE("Answers") {
   SECTION("are meaningless when empty") {
-    REQUIRE( Answer("").IsMeaningful() == false );
+    REQUIRE_FALSE( Answer("").IsMeaningful() );
   }
   SECTION("are valid otherwise") {
     Answer const answers[] = { Answer("Yes"), Answer("No"), Answer("250") };
@@ -17,13 +17,13 @@ TEST_CASE("Answers") {
 
 TEST_CASE("Reasoning") {
   SECTION("is meaningless without intermediate thoughts") {
-    REQUIRE_THROWS_AS(Reasoning().AssertCompliant(), Meaningless);
+    REQUIRE_FALSE( Reasoning().IsMeaningful() )
   }
   SECTION("is valid otherwise") {
     Reasoning reasoning({
       Fact("Glass is transparent"),
       Fact("Transparency allows light to pass through"),
     });
-    reasoning.AssertCompliant();
+    REQUIRE( reasoning.IsMeaningful() );
   }
 }
