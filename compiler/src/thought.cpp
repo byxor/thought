@@ -17,8 +17,7 @@ Answer::IsMeaningful() const {
 Reasoning::Reasoning(Thoughts thoughts) : thoughts(thoughts) {}
 
 
-void
-Reasoning::AssertCompliant() const {
-  if (this->thoughts.empty() )
-    throw NotReasoned();
+bool
+Reasoning::IsMeaningful() const {
+  return not this->thoughts.empty();
 }

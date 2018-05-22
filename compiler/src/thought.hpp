@@ -33,7 +33,7 @@ private:
 class Reasoning {
 public:
   Reasoning(Thoughts thoughts={});
-  void AssertCompliant() const;
+  bool IsMeaningful() const;
 private:
   Thoughts thoughts;
 };
