@@ -5,8 +5,8 @@
 
 
 TEST_CASE("Answers") {
-  SECTION("must not be empty") {
-    REQUIRE_THROWS_AS(Answer("").AssertCompliant(), NotAnAnswer);
+  SECTION("are meaningless when empty") {
+    REQUIRE_THROWS_AS(Answer("").AssertCompliant(), Meaningless);
   }
   SECTION("are valid otherwise") {
     Answer const answers[] = { Answer("Yes"), Answer("No"), Answer("250") };
@@ -16,8 +16,8 @@ TEST_CASE("Answers") {
 }
 
 TEST_CASE("Reasoning") {
-  SECTION("must have intermediate thoughts") {
-    REQUIRE_THROWS_AS(Reasoning().AssertCompliant(), NotReasoned);
+  SECTION("is meaningless without intermediate thoughts") {
+    REQUIRE_THROWS_AS(Reasoning().AssertCompliant(), Meaningless);
   }
   SECTION("is valid otherwise") {
     Reasoning reasoning({
