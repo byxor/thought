@@ -1,6 +1,6 @@
 # thought
 
-Articulate and explore your thoughts.
+Articulate, explore, and discipline your thoughts.
 
 ## Goal
 I need a way of articulating and exploring my thoughts in a way that's easy to read and tweak. This could be implemented in textual form (or maybe graphically).
