@@ -1,7 +1,12 @@
 #include "thought.hpp"
 #include "errors.hpp"
 
+
+Fact::Fact(Content content) {}
+
+
 Answer::Answer(Content content) : content(content) {}
+
 
 void
 Answer::AssertCompliant() const {
@@ -9,9 +14,9 @@ Answer::AssertCompliant() const {
     throw NotAnAnswer();
 }
 
-Fact::Fact(Content content) {}
 
 Reasoning::Reasoning(Thoughts thoughts) : thoughts(thoughts) {}
+
 
 void
 Reasoning::AssertCompliant() const {

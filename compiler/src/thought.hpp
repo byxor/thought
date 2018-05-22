@@ -9,21 +9,17 @@
 
 class Thought {};
 
+
 typedef const std::vector<Thought> Thoughts;
+
+
 typedef const std::string Content;
 
-class Reasoning {
-public:
-  Reasoning(Thoughts thoughts={});
-  void AssertCompliant() const;
-private:
-  Thoughts thoughts;
-};
 
 class Fact : public Thought {
-public:
-  Fact(Content content);
+  public: Fact(Content content);
 };
+
 
 class Answer {
 public:
@@ -31,6 +27,15 @@ public:
   void AssertCompliant() const;
 private:
   const std::string content;
+};
+
+
+class Reasoning {
+public:
+  Reasoning(Thoughts thoughts={});
+  void AssertCompliant() const;
+private:
+  Thoughts thoughts;
 };
 
 #endif
