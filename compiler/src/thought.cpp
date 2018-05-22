@@ -10,7 +10,7 @@ Answer::Answer(Content content) : content(content) {}
 
 bool
 Answer::IsMeaningful() const {
-  return not this->content.empty()
+  return not this->content.empty();
 }
 
 
