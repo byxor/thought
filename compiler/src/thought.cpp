@@ -1,7 +1,7 @@
 #include "thought.hpp"
-#include <string>
+#include "errors.hpp"
 
-Answer::Answer(const std::string content) : content(content) {}
+Answer::Answer(Content content) : content(content) {}
 
 void
 Answer::AssertCompliant() const {
@@ -9,17 +9,12 @@ Answer::AssertCompliant() const {
     throw NotAnAnswer();
 }
 
+Fact::Fact(Content content) {}
+
+Reasoning::Reasoning(Thoughts thoughts) : thoughts(thoughts) {}
+
 void
 Reasoning::AssertCompliant() const {
-  throw NotReasoned();
-}
-
-const char *
-NotAnAnswer::what() const throw() {
-  return "Answers cannot be empty";
-}
-
-const char *
-NotReasoned::what() const throw() {
-  return "Reasoning requires at least 1 thought";
+  if (this->thoughts.empty() )
+    throw NotReasoned();
 }

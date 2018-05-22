@@ -1,4 +1,3 @@
-import os
 from tools.build_utils import *
 
 CPP_VERSION = "-std=c++17"
@@ -23,16 +22,14 @@ TEST_FILES = cpp_only(files_only(paths_under(TEST_DIRECTORY)))
 ALL_FILES = TEST_FILES + SOURCE_FILES
 ALL_FILES_FOR_TEST = [f for f in ALL_FILES if f != SOURCE_MAIN]
 
-MAIN_ENVIRONMENT = Environment(
+Environment.with_colour = with_colour
+
+Environment(
     CXXFLAGS=CPP_FLAGS,
     CPPPATH=SOURCE_DIRECTORIES
-)
-MAIN_ENVIRONMENT['ENV']['TERM'] = os.environ['TERM']
-MAIN_ENVIRONMENT.Program(MAIN_EXECUTABLE, SOURCE_FILES)
+).with_colour().Program(MAIN_EXECUTABLE, SOURCE_FILES)
 
-TEST_ENVIRONMENT = Environment(
+Environment(
     CXXFLAGS=CPP_FLAGS,
     CPPPATH=ALL_DIRECTORIES
-)
-TEST_ENVIRONMENT['ENV']['TERM'] = os.environ['TERM']
-TEST_ENVIRONMENT.Program(TEST_EXECUTABLE, ALL_FILES_FOR_TEST)
+).with_colour().Program(TEST_EXECUTABLE, ALL_FILES_FOR_TEST)

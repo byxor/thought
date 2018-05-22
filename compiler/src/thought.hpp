@@ -1,23 +1,36 @@
-#include <exception>
+#ifndef THOUGHT_HPP
+#define THOUGHT_HPP
+
+#include "errors.hpp"
+
 #include <string>
+#include <vector>
+
+
+class Thought {};
+
+typedef const std::vector<Thought> Thoughts;
+typedef const std::string Content;
+
+class Reasoning {
+public:
+  Reasoning(Thoughts thoughts={});
+  void AssertCompliant() const;
+private:
+  Thoughts thoughts;
+};
+
+class Fact : public Thought {
+public:
+  Fact(Content content);
+};
 
 class Answer {
 public:
-  Answer(const std::string content);
+  Answer(Content content);
   void AssertCompliant() const;
 private:
   const std::string content;
 };
 
-class Reasoning {
-public:
-  void AssertCompliant() const;
-};
-
-struct NotAnAnswer : public std::exception {
-  const char *what() const throw();
-};
-
-struct NotReasoned : public std::exception {
-  const char *what() const throw();
-};
+#endif
