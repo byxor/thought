@@ -3,16 +3,18 @@
 #include "catch.hpp"
 
 TEST_CASE("Answers") {
-  SECTION("are invalid when empty") {
+  SECTION("must not be empty") {
     REQUIRE_THROWS_AS(Answer("").AssertCompliant(), NotAnAnswer);
   }
   SECTION("are valid otherwise") {
-    const Answer valid[] = {
-      Answer("Yes"),
-      Answer("No"),
-      Answer("250"),
-    };
-    for (auto const &answer: valid)
-      answer.AssertCompliant();
+    for (Answer const &notEmpty: { Answer("Yes"), Answer("No"), Answer("250") })
+      notEmpty.AssertCompliant();
   }
+}
+
+TEST_CASE("Reasoning") {
+  SECTION("must have intermediate thoughts") {
+    REQUIRE_THROWS_AS(Reasoning().AssertCompliant(), NotReasoned);
+  }
+  // SECTION("are valid otherwise")
 }

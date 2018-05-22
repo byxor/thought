@@ -9,16 +9,15 @@ private:
   const std::string content;
 };
 
+class Reasoning {
+public:
+  void AssertCompliant() const;
+};
+
 struct NotAnAnswer : public std::exception {
   const char *what() const throw();
 };
 
-// class Question {
-// public:
-//   Question(std::string question, std::string answer="");
-//   void AssertCompliance() const;
-// private:
-//   const std::string answer;
-// };
-
-
+struct NotReasoned : public std::exception {
+  const char *what() const throw();
+};

@@ -9,7 +9,17 @@ Answer::AssertCompliant() const {
     throw NotAnAnswer();
 }
 
+void
+Reasoning::AssertCompliant() const {
+  throw NotReasoned();
+}
+
 const char *
 NotAnAnswer::what() const throw() {
   return "Answers cannot be empty";
+}
+
+const char *
+NotReasoned::what() const throw() {
+  return "Reasoning requires at least 1 thought";
 }
