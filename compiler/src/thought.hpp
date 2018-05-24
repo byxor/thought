@@ -38,4 +38,15 @@ private:
   Thoughts thoughts;
 };
 
+
+typedef std::string Token;
+
+
+typedef std::vector<Token> Tokens;
+
+
+Tokens tokens(std::string input);
+
+
 #endif
+

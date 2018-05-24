@@ -1,6 +1,8 @@
 #include "thought.hpp"
 #include "errors.hpp"
 
+#include <string>
+
 
 Fact::Fact(Content content) {}
 
@@ -20,4 +22,9 @@ Reasoning::Reasoning(Thoughts thoughts) : thoughts(thoughts) {}
 bool
 Reasoning::IsMeaningful() const {
   return not this->thoughts.empty();
+}
+
+
+Tokens tokens(std::string input) {
+  return Tokens();
 }
