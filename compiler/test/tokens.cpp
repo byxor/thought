@@ -3,7 +3,13 @@
 
 
 TEST_CASE("Tokens") {
-  SECTION("are empty with no input") {
-    REQUIRE(tokens("") == Tokens());
+  SECTION("Empty input gives back nothing") {
+    REQUIRE(tokens("") == {});
+  }
+  SECTION("Facts can be tokenised") {
+    std::string fact = "* The earth is flat;";
+    REQUIRE(tokens(fact) == {
+
+    });
   }
 }
